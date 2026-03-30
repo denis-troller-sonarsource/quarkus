@@ -13,7 +13,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    if: github.repository == 'quarkusio/quarkus'
+    if: github.repository == 'denis-troller-sonarsource/quarkus'
 
     steps:
       - uses: actions/checkout@v6
@@ -51,4 +51,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./mvnw -e -B --settings .github/mvn-settings.xml -Dquickly-ci install org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=quarkusio -Dsonar.projectKey=quarkusio_quarkus -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectName=Quarkus -Dsonar.java.libraries=/home/runner/.m2/repository/**/*.jar
+        run: ./mvnw -e -B --settings .github/mvn-settings.xml -Dquickly-ci install org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=denis-troller-sonar -Dsonar.projectKey=denis-troller-sonarsource_quarkus -Dsonar.projectName=Quarkus -Dsonar.java.libraries=/home/runner/.m2/repository/**/*.jar
